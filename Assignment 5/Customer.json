@@ -1,0 +1,35 @@
+
+
+
+{
+  "Coustomer":[
+  
+  
+  {
+    "Cnum":"c1",
+    "Name": "Tommy",
+    "Email": "toom.cartoon@gmail.com",
+    "Mobile":"45678987654",
+    "city": "pune"
+   }
+   ,
+   {
+    "Cnum":"c2",
+    "Name": "Jerry",
+    "Email": "jerry.cartoon@gmail.com",
+    "Mobile":"4567334654",
+    "city": "karad"
+   }
+   ,
+   {
+    "Cnum":"c3",
+    "Name": "scooby",
+    "Email": "scooby.cartoon@gmail.com",
+    "Mobile":"443434654",
+    "city": "kolhapur"
+   }
+
+
+
+  ]
+}

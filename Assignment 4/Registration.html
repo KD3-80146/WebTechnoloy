@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>Registration Form</title>
+    <!DOCTYPE html>
+    <html lang="en">
+
+    <head>
+
+        <title>Registration Form</title>
+    </head>
+
+<body>
+    <center>
+        <div style=" border: 1px solid black; background-color: gray;" >
+            <h1><u>Registration</u></h1>
+            <div style="margin-left:10px ;margin-right: 10px;margin-bottom: 7px;border: 1px solid black; background-color: white;">
+                <table>
+                    <tbody>
+                        <tr>
+                            <td>Name</td>
+                            <td><input type="text" name="" id="name"></td>
+                        </tr>
+                        <tr>
+                            <td>BirthDate</td>
+                            <td><input type="date" name="" id="bdate"></td>
+                        </tr>
+                        <tr>
+                            <td>Email</td>
+                            <td><input type="email" name="" id="email"></td>
+                        </tr>
+                        <tr>
+                            <td>Password</td>
+                            <td><input type="password" name="" id="Password"></td>
+                        </tr>
+                        <tr>
+                            <td>Address</td>
+                    <td>
+                        <select name="country" id="country">
+                            <option value="">Select Country</option>
+                            <option value="india" selected>India</option>
+                           
+                        </select>
+                
+                        <select name="state" id="state">
+                            <option value="">Select State</option>
+                            <option value="ap">Andhra Pradesh</option>
+                            <option value="ka">Karnataka</option>
+                            <option value="mh">Maharashtra</option>
+                           
+                        </select>
+                
+                        <select name="city" id="city">
+                            <option value="">Select City</option>
+                            <option value="hyd">Hyderabad</option>
+                            <option value="blr">Bengaluru</option>
+                            <option value="mum">Mumbai</option>
+                           
+                        </select>
+                    </td>
+                        </tr>
+                    </tr>
+                    <tr>
+                       <td>Gender</td>
+                       <td>
+                        <input type="radio" name="gender" id="gender">Male
+                        <input type="radio" name="gender" id="gender">Female
+                       </td>
+                    </tr>
+       
+                    <tr>
+                       <td>UploadPhoto</td>
+                       <td><input type="file"></td>
+                    </tr>
+                    <tr>
+                       <td>select cource</td>
+                       <td><select name="cource" id="cource">
+                           <option value="Delhi">DAC</option>
+                           <option value="Delhi">DMC</option>
+                           <option value="Delhi">DTIIS</option>
+                           <option value="Delhi">DBDA</option>
+                       </select></td>
+                    </tr>
+                    </tbody>
+                </table>
+               
+              
+                    <div style="margin: 15px;">
+                    <input type="button" value="Submit" id="" style="margin-right: 100px;" onclick="checkValidation()">
+                    <input type="button" value="clear" id="">
+                   </div>
+            </div>
+             
+        </div>
+    </center>
+   
+</body>
+
+<script>
+    function checkValidation()
+    {
+        var refToName=document.getElementById('name');
+        var refToEmail=document.getElementById('email');
+        var refTopassword=document.getElementById('Password');
+
+
+        if (refToName.value.trim() === '') {
+        alert('Please enter your name');
+        return false;
+    }
+
+   
+    if (refToEmail.value.trim() === '' || !isValidEmail(refToEmail.value)) {
+        alert('Please enter a valid email address');
+        return false;
+    }
+
+  
+    if (refToPassword.value.trim() === '') {
+        alert('Please enter your password');
+        return false;
+    }
+
+   
+    return true;
+}
+
+
+function isValidEmail(email) {
+   
+    var emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+    return emailRegex.test(email);
+    }
+
+</script>
+
+</html>

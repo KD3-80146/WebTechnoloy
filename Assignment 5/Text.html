@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Document</title>
+</head>
+<body>
+   <center>
+    <div style="margin-top: 100px;">
+        <h1>Customer Registration</h1>
+        <div style="border: 1px solid; width: 700px; background-color: burlywood;">
+            <table>
+                <tbody>
+                    <tr>
+                        <td>Cnum</td>
+                        <td><input type="text " id="Cnum" placeholder="12"></td>
+                        <td><input type="text" name="" id="cusNumberErrorMsg"></td>
+                    </tr>
+                    <tr>
+                        <td>Cname</td>
+                        <td><input type="text " id="Cname" placeholder="Ujjwal"></td>
+                        <td><input type="text" name="" id="nameErrorMsg"></td>
+                    </tr>
+                    <tr>
+                        <td>Email</td>
+                        <td><input type="email" id="email" placeholder="abc@gmail.com"></td>
+                        <td><input type="text" name="" id="eMailErrorMsg"></td>
+                    </tr>
+                    <tr>
+                        <td>Password</td>
+                        <td><input type="password" id="Password" placeholder="*********"></td>
+                        <td><input type="text" name="" id="passwordErrorMsg"></td>
+                    </tr>
+                    <tr>
+                        <td>Conform Password</td>
+                        <td><input type="password" id="Password2" placeholder="********"></td>
+                        <td><input type="text" name="" id="PasswordError2"></td>
+                    </tr>
+                    <tr>
+                        <td>Mobile No</td>
+                        <td><input type="text" id="mobile" placeholder="8023032323"></td>
+                        <td><input type="text" name="" id="mobileError2"></td>
+                    </tr>
+                    <tr>
+                        <td>City</td>
+                        <td><input type="text" id="city" placeholder="Bihar"></td>
+                        <td><input type="text" name="" id="cityError2"></td>
+                    </tr>
+                    <tr>
+                        <td>State</td>
+                        <td><select aria-placeholder="Select State">
+                            <option value="">Bihar</option>
+                            <option value="">Assam</option>
+                            <option value="">Goa</option>
+                            <option value="">Panjab</option>
+                        </select></td>
+                        <td><input type="text" name="" id="StateError2"></td>
+                    </tr>
+                    <tr>
+                        <td>Pin Code</td>
+                        <td><input type="text" id="pin" placeholder="802301"></td>
+                        <td><input type="text" name="" id="cityError2"></td>
+                    </tr>
+                    <tr>
+                        <td> Required Pymt mode</td>
+                        <td><input type="checkbox">Credit
+                            <input type="checkbox" name="" id="">Debit
+                            <input type="checkbox">Upi
+                            </td>
+                        <td><input type="text" name="" id="cityError2"></td>
+                    </tr>
+                    <tr>
+                        <td></td>
+                        <td><input type="button" value="Button" id="button" onclick="DoRegister()"></td>
+                        <td></td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+   </center>
+
+   <script>
+     function DoRegister() {
+            validate("Cnum", "cusNumberErrorMsg", "Please enter valid customer number");
+            validate("Cname", "nameErrorMsg", "Please enter Valid Name");
+            validate("email", "eMailErrorMsg", "Please enter a valid email");
+            validate("Password", "passwordErrorMsg", "Please enter a password");
+            validate("Password2", "PasswordError2", "Please confirm your password");
+            validate("mobile", "mobileError2", "Please enter a mobile number");
+            validate("city", "cityError2", "Please enter a city name");
+            validate("pin", "pinError2", "Please enter a pincode");
+            validateCheckbox("paymentModes", "paymentModeError", "Please select at least one payment mode");
+            validateDropdown("state", "stateError2", "Please select a state");
+        }
+
+        function validate(id, errorid, errorMessage) {
+            var refToControl = document.getElementById(id);
+            var refToErrorId = document.getElementById(errorid);
+
+            if (refToControl.value === "") {
+                refToErrorId.innerText = errorMessage;
+            } else {
+                refToErrorId.innerText = "";
+            }
+        }
+
+        function validateCheckbox(id, errorid, errorMessage) {
+            var checkboxes = document.getElementsByName(id);
+            var refToErrorId = document.getElementById(errorid);
+            var checked = Array.from(checkboxes).some(checkbox => checkbox.checked);
+
+            if (!checked) {
+                refToErrorId.innerText = errorMessage;
+            } else {
+                refToErrorId.innerText = "";
+            }
+        }
+
+        function validateDropdown(id, errorid, errorMessage) {
+            var dropdown = document.getElementById(id);
+            var refToErrorId = document.getElementById(errorid);
+
+            if (dropdown.value === "") {
+                refToErrorId.innerText = errorMessage;
+            } else {
+                refToErrorId.innerText = "";
+            }
+        }
+    </script>
+   
+   </script>
+</body>
+</html>

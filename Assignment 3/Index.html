@@ -1,88 +1,104 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
     <title>Document</title>
-    <link rel="stylesheet" href="Style.css">
 </head>
 <body>
-   <div class="data1">
-    <h1><u>Registration Form </u></h1>
-   </div>
-   <div class="register"> 
-       <div class="form">
-           <img src="image/img.png" >
-      </div>
+    <div style="padding: 30px;"><center><h1> <u>Registration Form</u></h1>
+    </center></div>
+    <div style="display: flex; margin-left: 400px;">
+        <div class="form">
+            
+            
+                <video
+                  src="https://www.w3schools.com/html/mov_bbb.mp4"
+                  style="height: 300px"
+                  controls
+                ></video>
+        </div>
+        <div style="margin-left: 100px;">
+           <table>
+            <tr>
+                <td>Name</td>
+                <td><input type="text" id="Name" required></td>
+            </tr>
+            <tr>
+                <td>Birthdate</td>
+                <td><input type="date" id="bdate"></td>
+            </tr>
+            <tr>
+                <td>Email</td>
+                <td><input type="email" id="email" required></td>
+            </tr>
+            <tr>
+                <td>Password</td>
+                <td><input type="password" id="password" required></td>
+            </tr>
+            <tr>
+                <td>Address</td>
+                <td>
+                    <select name="country" id="country">
+                        <option value="">Select Country</option>
+                        <option value="india" selected>India</option>
+                       
+                    </select>
+            
+                    <select name="state" id="state">
+                        <option value="">Select State</option>
+                        <option value="ap">Andhra Pradesh</option>
+                        <option value="ka">Karnataka</option>
+                        <option value="mh">Maharashtra</option>
+                       
+                    </select>
+            
+                    <select name="city" id="city">
+                        <option value="">Select City</option>
+                        <option value="hyd">Hyderabad</option>
+                        <option value="blr">Bengaluru</option>
+                        <option value="mum">Mumbai</option>
+                       
+                    </select>
+                </td>
+            </tr>
+             <tr>
+                <td>Gender</td>
+                <td><input type="radio" id="gender">Male
+                    <input type="radio" id="gender">Female
+                </td>
+             </tr>
 
-       <div class="form2">
-           <form action="abc.php">
-                <table>
-                    <tr>
-                       <td colspan="1">Name</td>
-                       <td>
-                        <input type="Text" placeholder="Enter Name" required>
-                       </td>
-                       <td></td>
-                       <td></td>
-                    </tr>  
-                    <tr>
-                        <td>BirthDate</td>
-                        <td>
-                           <input type="date">
-                        </td>
-                      <td></td>
-                      <td></td>
-                    </tr>
-                     <tr>
-                        <td>Email</td>
-                        <td>
-                          <input type="email">
-                        </td>
-                        <td></td>
-                        <td></td>
-                     </tr> 
-                     <tr>
-                        <td>Password</td>
-                        <td>
-                          <input type="password">
-                        </td>
-                        <td></td>
-                        <td></td>
-                     </tr>
-                     <tr>
-                        <td>Address</td>
-                        <td>
-                           <select name="State">
-                            <option value="1">Bihar</option>
-                            <option value="2">Delhi</option>
-                            <option value="3">Maharastra</option>
-                            <option value="4">Karnataka</option>
-                           </select>
-                        </td>
-                        <td>
-                            <select name="Distict">
-                             <option value="1">Pune</option>
-                             <option value="2">Patna</option>
-                             <option value="3">Kolkata</option>
-                             <option value="4">Mumbai</option>
-                            </select>
-                         </td>
-                         <td>
-                            <select name="city">
-                             <option value="1">Pune</option>
-                             <option value="2">Patna</option>
-                             <option value="3">Kolkata</option>
-                             <option value="4">Mumbai</option>
-                            </select>
-                         </td>
-                     </tr>    
-                   
-                   
-                 </table>
-
-             </form>
-
-         </div >
+             <tr>
+                <td>UploadPhoto</td>
+                <td><input type="file"></td>
+             </tr>
+             <tr>
+                <td>select cource</td>
+                <td><select name="cource" id="cource">
+                    <option value="Delhi">DAC</option>
+                    <option value="Delhi">DMC</option>
+                    <option value="Delhi">DTIIS</option>
+                    <option value="Delhi">DBDA</option>
+                </select></td>
+             </tr>
+           </table> 
+           <div style="margin-left: 20px; padding-top: 15px;">
+            <input type="button"  value="Register">
+            <input type="button"  value="clear" style="margin-left: 100px; " onclick="Clear()">
+           </div>
+        </div>
     </div>
-    
+   <script>
+        function Clear()
+        {
+            var refToName=document.getElementById("Name");
+            var refToEmail=document.getElementById("email");
+            var refTopassword=document.getElementById("password");
+           
+            refToName.value="";
+            refToEmail.value="";
+            refTopassword.value="";
+            
+        }
+   </script>
 </body>
 </html>
